@@ -12,7 +12,7 @@ import { useAppProps } from './app.props';
  * <App />
  */
 const App = hoc(useAppProps, () => (
-  <div>
+  <div style={{ width: '10%' }}>
     <React.Suspense fallback={<div>Loading...</div>}>
       <Switch>{/*<Route path='/auth' component={Auth} />*/}</Switch>
     </React.Suspense>

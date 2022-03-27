@@ -1,4 +1,105 @@
 @import 'core.scss';
 
 .button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width: fit-content;
+  padding: 1rem 2rem;
+  white-space: nowrap;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: $border-radius;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+  transition: background 0.3s ease-in, color $transition, box-shadow 0.3s ease-out;
+  box-shadow: inset 0 0 0 2px transparent;
+
+  &:hover {
+    --box-shadow-color: transparent;
+  }
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    z-index: -1;
+    transition: transform 0.25s ease-out;
+    transform: translate(-101%, -50%) skew(0deg);
+    opacity: 1
+  }
+
+  &-theme {
+    &-primary {
+      background: $primary;
+      color: $secondary;
+
+      &:after {
+        background-color: $secondary;
+      }
+
+      &:hover {
+        color: $primary;
+
+        &:after {
+          transform: translate(-10%, -50%) skew(-30deg);
+        }
+      }
+    }
+
+    &-secondary {
+      background: $secondary;
+      color: $primary;
+
+      &:after {
+        background-color: $primary;
+      }
+
+      &:hover {
+        color: $secondary;
+
+        &:after {
+          transform: translate(-10%, -50%) skew(-30deg);
+        }
+      }
+    }
+
+    &-tertiary {
+      background-color: $white;
+      box-shadow: inset 0 0 0 1px $primary;
+      color: $primary;
+
+      &:after {
+        background-color: $primary;
+      }
+
+      &:hover {
+        color: $white;
+
+        &:after {
+          transform: translate(-10%, -50%) skew(-30deg);
+        }
+      }
+    }
+  }
+
+  &-disabled {
+    cursor: not-allowed;
+    background-color: $grey-cloud;
+    color: $white-smoke;
+    box-shadow: none;
+
+    &:hover {
+      color: $white-smoke;
+
+      &:after {
+        transform: translate(-101%, -50%) skew(0deg);
+      }
+    }
+  }
 }
