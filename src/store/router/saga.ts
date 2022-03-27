@@ -4,6 +4,9 @@ import { navigate, setLocation } from './actions';
 import { put, take } from 'redux-saga/effects';
 import { eventChannel } from 'redux-saga';
 
+/**
+ * Router saga
+ */
 class RouterSaga {
   /**
    * Listen history
@@ -31,6 +34,7 @@ class RouterSaga {
     } finally {
     }
   }
+
   /**
    * Navigate to url
    */

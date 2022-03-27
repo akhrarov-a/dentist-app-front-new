@@ -1,8 +1,9 @@
 import { reducer } from 'redux-chill';
+import { GeneralState } from './state';
 
 /**
- * General state
+ * General reducer
  */
-const general = reducer({});
+const generalReducer = reducer(new GeneralState());
 
-export { general };
+export { generalReducer };

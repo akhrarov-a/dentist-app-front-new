@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { ComponentType } from 'react';
+import React, { ComponentType } from 'react';
 
 /**
  * Wrap component with hook function with will be called in HOC component render

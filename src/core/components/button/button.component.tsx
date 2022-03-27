@@ -1,18 +1,16 @@
-import * as React from "react";
-import { ButtonProps } from './button.props'
-import * as styles from './button.scss';
+import React, { FC } from 'react';
+import { ButtonProps } from './button.props';
+import styles from './button.scss';
 
 /**
- * Renders Button
+ * <Button />
  */
-const Button: React.FC<ButtonProps> = ({}) => {
-  return (
-    <div className={styles.button}>
-      {/* content */}
-      {/* content */}
-      {/* content */}
-    </div>
-  );
-};
+const Button: FC<ButtonProps> = ({}) => (
+  <div className={styles.button}>
+    {/* content */}
+    {/* content */}
+    {/* content */}
+  </div>
+);
 
 export { Button };

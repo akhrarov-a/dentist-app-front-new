@@ -1,12 +1,11 @@
+import React, { FC, useCallback } from 'react';
 import { useFormikContext } from 'formik';
-import * as React from 'react';
 import { get } from 'object-path';
-import { useCallback } from 'react';
-import { FormikStatus } from './status';
 import { ComponentType } from 'enzyme';
+import { FormikStatus } from './status';
 
 /**
- * Field props
+ * <Field /> props type
  */
 type Props = {
   value?: any;
@@ -19,7 +18,7 @@ type Props = {
 };
 
 /**
- * Use field props
+ * <Field /> props
  */
 const useFieldProps = (name: string) => {
   const {
@@ -67,7 +66,8 @@ const useFieldProps = (name: string) => {
  */
 function withField<P extends Props>(source: ComponentType<P>) {
   const Result: any = source;
-  const result: React.FC<{ name: string }> = props => {
+
+  const result: FC<{ name: string }> = props => {
     const {
       value,
       error,

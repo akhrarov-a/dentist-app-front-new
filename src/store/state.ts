@@ -1,13 +1,13 @@
-import { app } from './reducer';
-import { combineReducers } from 'redux';
-import { router } from './router';
+import { GeneralState } from './general';
+import { RouterState } from './router';
 import { AuthState } from '@auth';
 
 /**
  * App state
  */
 type State = {
-  router: ReturnType<typeof router>;
+  general: GeneralState;
+  router: RouterState;
   auth: AuthState;
 };
 

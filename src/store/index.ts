@@ -2,14 +2,14 @@ import { enviroment } from '@env';
 import { History } from 'history';
 import {
   applyMiddleware,
-  createStore as reduxCreateStore,
-  combineReducers
+  combineReducers,
+  createStore as reduxCreateStore
 } from 'redux';
 import { run } from 'redux-chill';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import { getContext } from './context';
-import { app } from './reducer';
+import { reducers } from './reducers';
 import { sagas } from './sagas';
 
 /**
@@ -30,7 +30,7 @@ const createStore = (history: History) => {
       enviroment.development && console.log(error, 'Saga error occured')
   });
   const applied = applyMiddleware(sagaMiddleware);
-  const reducer = combineReducers(app);
+  const reducer = combineReducers(reducers);
   const store = reduxCreateStore(
     reducer,
     enviroment.development ? composeWithDevTools(applied) : applied
@@ -48,7 +48,7 @@ const createStore = (history: History) => {
 
       store.replaceReducer(
         combineReducers({
-          ...app,
+          ...reducers,
           ...modules
         })
       );

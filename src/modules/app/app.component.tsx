@@ -1,24 +1,22 @@
-import * as React from 'react';
-import { AppProps } from './app.props';
-import * as styles from './app.scss';
-import { register } from '@core';
-import { Switch, Route } from 'react-router-dom';
-
-const Auth = register('auth', () => import('@auth'));
-const Profile = register('profile', () => import('@profile'));
+import React from 'react';
+import { Switch } from 'react-router-dom';
+import { hoc } from '@core';
+import { useAppProps } from './app.props';
 
 /**
- * Renders App
+ * Lazy imports
  */
-const App: React.FC<AppProps> = ({}) => (
-  <div className={styles.app}>
+// const Auth = register('auth', () => import('@auth'));
+
+/**
+ * <App />
+ */
+const App = hoc(useAppProps, () => (
+  <div>
     <React.Suspense fallback={<div>Loading...</div>}>
-      <Switch>
-        <Route path='/auth' component={Auth} />
-        <Route path='/profile' component={Profile} />
-      </Switch>
+      <Switch>{/*<Route path='/auth' component={Auth} />*/}</Switch>
     </React.Suspense>
   </div>
-);
+));
 
 export { App };

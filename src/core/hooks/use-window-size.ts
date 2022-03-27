@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 /**
  * Get sizes

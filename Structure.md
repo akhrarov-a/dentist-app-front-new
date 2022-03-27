@@ -22,7 +22,7 @@ src ->
             - index - rexport file
             - saga.ts - saga file ( preferably redux-chill )
             - state.ts - state definition ( type/class )
-            - validation -> file with yup schemas for module local forms
+        - validation -> file with yup schemas for module local forms
 - provider - top level component which contain all required context providers & other things
 - public - html, images, fonts and other
 - store - store configuration, and store slices which not related to specific component module ( can be shared store modules also )

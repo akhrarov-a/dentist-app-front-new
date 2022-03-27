@@ -1,5 +1,5 @@
 /**
- * Props
+ * <Button /> props
  */
 type ButtonProps = {};
 

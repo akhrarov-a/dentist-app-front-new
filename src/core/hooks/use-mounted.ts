@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react';
 
+/**
+ * Use mounted
+ */
 const useMounted = (callback = () => {}) => {
   let isMounted = useRef(false);
 

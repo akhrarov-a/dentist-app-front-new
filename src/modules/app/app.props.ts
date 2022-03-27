@@ -1,6 +1,8 @@
 /**
- * Props
+ * <App /> props
  */
-type AppProps = {};
+const useAppProps = () => {
+  return {};
+};
 
-export { AppProps };
+export { useAppProps };

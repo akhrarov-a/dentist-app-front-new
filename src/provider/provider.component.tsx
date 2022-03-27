@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { ProviderProps } from './provider.props';
-import { Provider as StoreProvider } from 'react-redux';
+import React from 'react';
 import { Router } from 'react-router-dom';
+import { Provider as StoreProvider } from 'react-redux';
+import { ProviderProps } from './provider.props';
 
 /**
- * Renders Provider
+ * <Provider />
  */
 const Provider: React.FC<ProviderProps> = ({ children, store, history }) => (
   <StoreProvider store={store}>

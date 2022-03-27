@@ -5,9 +5,10 @@ import { FormikHelpers } from 'formik';
  */
 type SubmitPayload<V, M = null> = {
   /**
-   * Submited values
+   * Submitted values
    */
   values: V;
+
   /**
    * Optional meta
    */

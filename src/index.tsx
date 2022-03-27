@@ -1,14 +1,25 @@
 import './styles/global.scss';
-import * as React from 'react';
+import React from 'react';
 import { render } from 'react-dom';
 import { createBrowserHistory } from 'history';
-import { createStore } from './store';
-import { Provider } from './provider';
+import { createStore } from '@store';
 import { App } from '@app';
+import { Provider } from './provider';
 import { init } from './localization';
 
+/**
+ * History
+ */
 const history = createBrowserHistory();
+
+/**
+ * Store
+ */
 const store = createStore(history);
+
+/**
+ * Setup
+ */
 const setup = async () => {
   await init();
 
@@ -20,4 +31,7 @@ const setup = async () => {
   );
 };
 
+/**
+ * Start
+ */
 setup();

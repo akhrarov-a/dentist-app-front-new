@@ -1,6 +1,6 @@
+import { useMemo } from 'react';
 import { useHistory } from 'react-router';
 import { parse } from 'querystring';
-import { useMemo } from 'react';
 
 /**
  * Retrun search string
