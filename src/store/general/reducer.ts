@@ -1,5 +1,5 @@
 import { reducer } from 'redux-chill';
-import { logIn, logOut } from '@auth';
+import { logIn, logOut } from '@auth/store';
 import { GeneralState } from './state';
 import { getUser } from './actions';
 

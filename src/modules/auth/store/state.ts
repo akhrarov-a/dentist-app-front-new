@@ -3,9 +3,9 @@
  */
 class AuthState {
   /**
-   * Error
+   * Is error
    */
-  public error: string | null = null;
+  public isError: boolean = false;
 }
 
 export { AuthState };

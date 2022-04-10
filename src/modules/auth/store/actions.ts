@@ -7,7 +7,7 @@ import { Login } from '@api';
 const logIn = make('[auth] sign in')
   .stage((payload: Login) => payload)
   .stage('success')
-  .stage('fail', error => error);
+  .stage('fail');
 
 /**
  * Log out

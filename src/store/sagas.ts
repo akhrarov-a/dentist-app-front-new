@@ -1,6 +1,6 @@
 import { GeneralSaga } from '@general';
 import { RouterSaga } from '@router';
-import { AuthSaga } from '@auth';
+import { AuthSaga } from '@auth/store';
 
 /**
  * App sagas

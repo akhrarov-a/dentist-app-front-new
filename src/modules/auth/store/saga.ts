@@ -35,8 +35,10 @@ class AuthSaga {
 
       yield put(logIn.success());
       yield put(getUser());
-    } catch (err) {
-      yield put(logIn.fail('Invalid Credentials'));
+    } catch (error) {
+      console.log(error);
+
+      yield put(logIn.fail());
     }
   }
 

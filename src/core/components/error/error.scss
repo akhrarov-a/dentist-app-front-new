@@ -1,0 +1,30 @@
+@import 'core.scss';
+
+.error {
+  @include flex();
+
+  gap: 6px;
+  padding: 0;
+  margin-bottom: 0.8rem;
+
+  p {
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: $red;
+  }
+
+  &-sign {
+    @include flex(center, center);
+    @include size(1rem);
+
+    padding-top: calc(0.14rem);
+    margin-top: -2px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: $red;
+    border: 1px solid $red;
+    border-radius: 100%;
+  }
+}

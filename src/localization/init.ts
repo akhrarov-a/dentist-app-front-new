@@ -1,6 +1,5 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { setLocale } from './yup';
 
 /**
  * Setup localization
@@ -12,6 +11,12 @@ const init = async () => {
     resources: {
       en: {
         common: require('./locales/en.json')
+      },
+      ru: {
+        common: require('./locales/ru.json')
+      },
+      uz: {
+        common: require('./locales/uz.json')
       }
     },
     defaultNS: 'common',
@@ -22,8 +27,6 @@ const init = async () => {
       escapeValue: false
     }
   });
-
-  setLocale();
 };
 
 export { init };

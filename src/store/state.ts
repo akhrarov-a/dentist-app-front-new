@@ -1,6 +1,6 @@
 import { GeneralState } from '@general';
 import { RouterState } from '@router';
-import { AuthState } from '@auth';
+import { AuthState } from '@auth/store';
 
 /**
  * App state

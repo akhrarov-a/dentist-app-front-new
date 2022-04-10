@@ -9,6 +9,7 @@ import styles from './button.scss';
  */
 const Button: FC<ButtonProps> = ({
   className,
+  fullWidth,
   theme,
   disabled,
   children,
@@ -19,7 +20,8 @@ const Button: FC<ButtonProps> = ({
       styles.button,
       styles[`buttonTheme${capitalize(theme)}`],
       className,
-      { [styles.buttonDisabled]: disabled }
+      { [styles.buttonDisabled]: disabled },
+      { [styles.buttonFullWidth]: fullWidth }
     )}
     disabled={disabled}
     {...(props as any)}
@@ -32,7 +34,8 @@ const Button: FC<ButtonProps> = ({
  * <Button /> default props
  */
 Button.defaultProps = {
-  theme: 'primary'
+  theme: 'primary',
+  fullWidth: false
 };
 
 export { Button };

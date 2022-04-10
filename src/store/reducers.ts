@@ -1,6 +1,6 @@
 import { routerReducer } from '@router';
 import { generalReducer } from '@general';
-import { authReducer } from '@auth';
+import { authReducer } from '@auth/store';
 
 /**
  * App reducers

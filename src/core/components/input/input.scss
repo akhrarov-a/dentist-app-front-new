@@ -5,6 +5,10 @@
   width: 100%;
   height: fit-content;
   margin-bottom: 1rem;
+
+  &-with-error {
+    margin-bottom: 2.6rem;
+  }
 }
 
 .label {
@@ -26,6 +30,10 @@
   &-focused {
     color: $primary-dark;
   }
+
+  &-error {
+    color: $red;
+  }
 }
 
 .input {
@@ -43,39 +51,13 @@
     border: 2px solid $red;
   }
 
-  &-has-error-message {
-    margin-bottom: 0.8rem;
-  }
-
   &:focus {
     border: 2px solid $primary-dark;
   }
 }
 
 .error {
-  @include flex();
-
-  gap: 6px;
-  padding: 0;
-
-  p {
-    padding: 0;
-    margin: 0;
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: $red;
-  }
-
-  &-sign {
-    @include flex(center, center);
-    @include size(1rem);
-    padding-top: calc(0.14rem);
-
-    margin-top: -2px;
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: $red;
-    border: 1px solid $red;
-    border-radius: 100%;
-  }
+  position: absolute;
+  top: calc(100% + 0.8rem);
+  left: 0;
 }

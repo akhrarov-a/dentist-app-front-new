@@ -7,17 +7,11 @@ import { logIn, logOut } from './actions';
  * Auth reducer
  */
 const authReducer = reducer(new AuthState())
-  .on([startUp.success, logIn.success], state => {
-    state.error = null;
+  .on([logIn, logOut, startUp.success, logIn.success], state => {
+    state.isError = false;
   })
-  .on(logIn, state => {
-    state.error = null;
-  })
-  .on(logIn.fail, (state, error) => {
-    state.error = error;
-  })
-  .on(logOut, state => {
-    state.error = null;
+  .on(logIn.fail, state => {
+    state.isError = true;
   });
 
 export { authReducer };

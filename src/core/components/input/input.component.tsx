@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { hoc } from '../../utils';
 import { useInputProps } from './input.props';
 import styles from './input.scss';
+import { Error } from '@core/components/error';
 
 /**
  * <Input />
@@ -20,30 +21,29 @@ const Input = hoc(
     _onFocus,
     ...props
   }) => (
-    <div className={styles.container}>
+    <div
+      className={classNames(styles.container, {
+        [styles.containerWithError]: !!error
+      })}
+    >
       <label
         className={classNames(styles.label, {
           [styles.labelFocused]: focused,
-          [styles.labelHasValue]: hasValue
+          [styles.labelHasValue]: hasValue,
+          [styles.labelError]: (isError || !!error) && !focused
         })}
       >
         {label}
       </label>
       <input
         className={classNames(styles.input, className, {
-          [styles.inputError]: isError || !!error,
-          [styles.inputHasErrorMessage]: !!error
+          [styles.inputError]: isError || !!error
         })}
         onFocus={_onFocus}
         onBlur={_onBlur}
         {...props}
       />
-      {!!error && (
-        <div className={styles.error}>
-          <div className={styles.errorSign}>!</div>
-          <p className={styles.errorText}>{error}</p>
-        </div>
-      )}
+      <Error className={styles.error} isError={!!error} error={error} />
     </div>
   )
 );
