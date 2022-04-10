@@ -1,8 +1,8 @@
 import { call, put } from 'redux-saga/effects';
 import { Payload, Saga } from 'redux-chill';
-import moment from 'moment';
 import { StoreContext } from '@store';
 import { getUser, startUp } from './actions';
+import { getCookie } from '@core';
 
 /**
  * General saga
@@ -13,13 +13,9 @@ class GeneralSaga {
    */
   @Saga(startUp)
   public *start() {
-    const expireDate: any = localStorage.getItem('expireDate');
+    const token = getCookie('idToken');
 
-    if (!expireDate) return;
-
-    const isAfter = moment().isAfter(expireDate);
-
-    if (isAfter) return;
+    if (!token) return;
 
     yield put(startUp.success());
     yield put(getUser());

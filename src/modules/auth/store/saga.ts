@@ -1,7 +1,7 @@
-import moment from 'moment';
 import { call, put } from 'redux-saga/effects';
 import { Payload, Saga } from 'redux-chill';
 import { StoreContext } from '@store';
+import { deleteCookie, setCookie } from '@core';
 import { getUser } from '@general/actions';
 import { logIn, logOut } from './actions';
 
@@ -22,16 +22,14 @@ class AuthSaga {
         data: { accessToken, expires }
       } = yield call(auth.logIn, { username, password });
 
-      const expireDate = moment()
-        .add(expires, 'seconds')
-        .format();
-
-      yield call([localStorage, localStorage.setItem], 'idToken', accessToken);
-      yield call(
-        [localStorage, localStorage.setItem],
-        'expireDate',
-        expireDate
-      );
+      yield call(setCookie, {
+        name: 'idToken',
+        value: accessToken,
+        options: {
+          secure: true,
+          'max-age': expires
+        }
+      });
 
       yield put(logIn.success());
       yield put(getUser());
@@ -47,8 +45,7 @@ class AuthSaga {
    */
   @Saga(logOut)
   public *logOut() {
-    localStorage.removeItem('idToken');
-    localStorage.removeItem('expireDate');
+    yield call(deleteCookie, 'idToken');
   }
 }
 

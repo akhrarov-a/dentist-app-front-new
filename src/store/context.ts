@@ -3,6 +3,7 @@ import { History } from 'history';
 import { Store } from 'redux';
 import { AuthService } from '@api';
 import { logOut } from '@auth/store';
+import { getCookie } from '@core';
 
 /**
  * Get context
@@ -16,14 +17,14 @@ const getContext = (history: History, store: Store) => {
 
     return async (
       { headers = {}, ...config }: AxiosRequestConfig,
-      enabled = true,
-      disabledToken = false
+      enabled = true
     ) => {
       try {
         headers.channel = 'admin';
         headers['Cache-Control'] = 'no-cache';
-        const token = localStorage.getItem('idToken');
-        const response = await instance({
+        const token = getCookie('idToken');
+
+        return await instance({
           ...config,
           headers: token
             ? {
@@ -32,15 +33,6 @@ const getContext = (history: History, store: Store) => {
               }
             : headers
         });
-
-        const idToken =
-          response?.headers?.idtoken || response?.headers?.idToken;
-
-        if (idToken && !disabledToken) {
-          localStorage.setItem('idToken', idToken);
-        }
-
-        return response;
       } catch (e) {
         const error: AxiosError = e;
 
