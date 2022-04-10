@@ -62,5 +62,6 @@ const createStore = (history: History) => {
   return store;
 };
 
+export * from './context';
 export * from './state';
 export { createStore };

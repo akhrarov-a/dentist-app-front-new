@@ -1,10 +1,18 @@
 import { make } from 'redux-chill';
+import { User } from '@api';
 
 /**
- * Set authorized
+ * Start up
  */
-const setAuthorized = make('[general] set authorized').stage(
-  (value: boolean) => value
-);
+const startUp = make('[general] start up')
+  .stage('success')
+  .stage('fail');
 
-export { setAuthorized };
+/**
+ * Get user
+ */
+const getUser = make('[general] get user')
+  .stage('success', (payload: User) => payload)
+  .stage('finish');
+
+export { startUp, getUser };

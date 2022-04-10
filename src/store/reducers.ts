@@ -1,12 +1,14 @@
-import { routerReducer } from './router';
-import { generalReducer } from './general';
+import { routerReducer } from '@router';
+import { generalReducer } from '@general';
+import { authReducer } from '@auth';
 
 /**
  * App reducers
  */
 const reducers = {
   router: routerReducer,
-  general: generalReducer
+  general: generalReducer,
+  auth: authReducer
 };
 
 export { reducers };

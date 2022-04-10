@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 import { History } from 'history';
 import { Store } from 'redux';
-import { TestService } from '@api';
+import { AuthService } from '@api';
 
 /**
  * Get context
@@ -58,7 +58,7 @@ const getContext = (history: History, store: Store) => {
   return {
     store,
     history,
-    test: new TestService(request)
+    auth: new AuthService(request)
   };
 };
 
