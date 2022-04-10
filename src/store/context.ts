@@ -8,7 +8,10 @@ import { AuthService } from '@api';
  */
 const getContext = (history: History, store: Store) => {
   const request = (defaults: AxiosRequestConfig) => {
-    const instance = axios.create(defaults);
+    const instance = axios.create({
+      baseURL: process.env.apiUrl,
+      ...defaults
+    });
 
     return async (
       { headers = {}, ...config }: AxiosRequestConfig,
