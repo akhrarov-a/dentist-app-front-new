@@ -11,6 +11,7 @@
     "e2e": "jest  --config=\"./tests/e2e/jest.config.js\"",
     "e2e:watch": "jest  --watch --config=\"./tests/e2e/jest.config.js\"",
     "eslint": "eslint --fix \"./src/**/*.{ts,tsx}\"",
+    "prettier": "prettier \"./src/**/*.{ts,tsx}\"",
     "stylelint": "stylelint --fix \"./src/**/*.scss\" && prettier --write \"./src/**/*.scss\"",
     "update:module:paths": "node ./scripts/update-module-paths.js"
   },
