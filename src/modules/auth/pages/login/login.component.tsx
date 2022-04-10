@@ -1,14 +1,12 @@
-import React from 'react';
-import { Button, hoc, Input } from '@core';
+import React, { Fragment } from 'react';
+import { Button, Error, hoc, Input } from '@core';
 import { useLoginProps } from './login.props';
-import styles from './login.scss';
-import { Error } from '@core/components/error';
 
 /**
  * <Login />
  */
 const Login = hoc(useLoginProps, ({ t, form, isError }) => (
-  <div className={styles.container}>
+  <Fragment>
     <Input
       name='username'
       type='text'
@@ -28,8 +26,10 @@ const Login = hoc(useLoginProps, ({ t, form, isError }) => (
       error={form.errors.password}
     />
     <Error isError={isError} error={t('auth.form.invalidCredentials')} />
-    <Button onClick={form.submitForm}>{t('auth.form.submit')}</Button>
-  </div>
+    <Button onClick={form.submitForm} fullWidth>
+      {t('auth.form.submit')}
+    </Button>
+  </Fragment>
 ));
 
 export { Login };

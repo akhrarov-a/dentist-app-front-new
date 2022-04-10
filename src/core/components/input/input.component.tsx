@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import { hoc } from '../../utils';
+import { Error } from '../error';
 import { useInputProps } from './input.props';
 import styles from './input.scss';
-import { Error } from '@core/components/error';
 
 /**
  * <Input />
