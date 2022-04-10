@@ -23,7 +23,9 @@
       "@core/*": ["./src/core/*"],
       "@api": ["./src/api/index"],
       "@app": ["./src/modules/app/index"],
-      "@app/*": ["./src/modules/app/*"]
+      "@app/*": ["./src/modules/app/*"],
+      "@auth": ["./src/modules/auth/index"],
+      "@auth/*": ["./src/modules/auth/*"]
     }
   },
   "include": ["./src/**/*", "./typings/**/*"],

@@ -1,6 +1,11 @@
 /**
  * General state
  */
-class GeneralState {}
+class GeneralState {
+  /**
+   * Authorized
+   */
+  authorized: boolean;
+}
 
 export { GeneralState };
