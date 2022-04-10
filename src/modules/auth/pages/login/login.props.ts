@@ -1,10 +1,11 @@
+import { KeyboardEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { useFormik } from 'formik';
 import { State } from '@store';
 import { Login } from '@api';
 import { logIn } from '@auth/store';
 import { useLoginFormSchema } from '@auth/validation';
-import { useTranslation } from 'react-i18next';
 
 /**
  * <Login /> props
@@ -27,10 +28,17 @@ const useLoginProps = () => {
     validateOnChange: true
   });
 
+  const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key !== 'Enter') return;
+
+    form.submitForm();
+  };
+
   return {
     t,
     form,
-    isError
+    isError,
+    onKeyDown
   };
 };
 

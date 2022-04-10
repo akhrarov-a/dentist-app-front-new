@@ -21,10 +21,7 @@ class AuthService {
   /**
    * Api
    */
-  public api = this.create({
-    withCredentials: true,
-    baseURL: '/auth'
-  });
+  public api = this.create({});
 
   /**
    * Get user
@@ -32,7 +29,7 @@ class AuthService {
   public getUser = () =>
     this.api({
       method: 'GET',
-      url: '/me'
+      url: '/auth/me'
     });
 
   /**
@@ -40,7 +37,7 @@ class AuthService {
    */
   public logIn = ({ username, password }: Login) =>
     this.api({
-      url: '/signin',
+      url: '/auth/signin',
       method: 'POST',
       data: {
         login: username,
@@ -53,7 +50,7 @@ class AuthService {
    */
   public signUp = (data: SignUp) =>
     this.api({
-      url: '/signin',
+      url: '/auth/signup',
       method: 'POST',
       data
     });

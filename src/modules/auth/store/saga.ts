@@ -19,11 +19,11 @@ class AuthSaga {
   ) {
     try {
       const {
-        data: { accessToken, expiresIn }
+        data: { accessToken, expires }
       } = yield call(auth.logIn, { username, password });
 
       const expireDate = moment()
-        .add(expiresIn, 'seconds')
+        .add(expires, 'seconds')
         .format();
 
       yield call([localStorage, localStorage.setItem], 'idToken', accessToken);

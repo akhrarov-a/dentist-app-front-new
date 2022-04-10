@@ -5,7 +5,7 @@ import { useLoginProps } from './login.props';
 /**
  * <Login />
  */
-const Login = hoc(useLoginProps, ({ t, form, isError }) => (
+const Login = hoc(useLoginProps, ({ t, form, isError, onKeyDown }) => (
   <Fragment>
     <Input
       name='username'
@@ -16,6 +16,7 @@ const Login = hoc(useLoginProps, ({ t, form, isError }) => (
       error={form.touched.username && form.errors.username}
       onChange={form.handleChange}
       onBlur={form.handleBlur}
+      onKeyDown={onKeyDown}
     />
     <Input
       name='password'
@@ -26,6 +27,7 @@ const Login = hoc(useLoginProps, ({ t, form, isError }) => (
       error={form.touched.password && form.errors.password}
       onChange={form.handleChange}
       onBlur={form.handleBlur}
+      onKeyDown={onKeyDown}
     />
     <Error isError={isError} error={t('auth.form.invalidCredentials')} />
     <Button onClick={form.submitForm} fullWidth>

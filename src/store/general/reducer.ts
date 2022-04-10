@@ -1,13 +1,13 @@
 import { reducer } from 'redux-chill';
 import { logIn, logOut } from '@auth/store';
 import { GeneralState } from './state';
-import { getUser } from './actions';
+import { getUser, startUp } from './actions';
 
 /**
  * General reducer
  */
 const generalReducer = reducer(new GeneralState())
-  .on(logIn.success, state => {
+  .on([startUp.success, logIn.success], state => {
     state.authorized = true;
   })
   .on([logIn.fail, logOut], state => {

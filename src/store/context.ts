@@ -22,12 +22,12 @@ const getContext = (history: History, store: Store) => {
       try {
         headers.channel = 'admin';
         headers['Cache-Control'] = 'no-cache';
-        const token = localStorage.getItem('idtoken');
+        const token = localStorage.getItem('idToken');
         const response = await instance({
           ...config,
           headers: token
             ? {
-                idtoken: token,
+                Authorization: `Bearer ${token}`,
                 ...headers
               }
             : headers
@@ -37,7 +37,7 @@ const getContext = (history: History, store: Store) => {
           response?.headers?.idtoken || response?.headers?.idToken;
 
         if (idToken && !disabledToken) {
-          localStorage.setItem('idtoken', idToken);
+          localStorage.setItem('idToken', idToken);
         }
 
         return response;
@@ -45,7 +45,7 @@ const getContext = (history: History, store: Store) => {
         const error: AxiosError = e;
 
         switch (true) {
-          case enabled && error.response.status == 401: {
+          case enabled && error.response?.status == 401: {
             store.dispatch(logOut());
 
             break;
