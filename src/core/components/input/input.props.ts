@@ -8,6 +8,16 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
    * Label
    */
   label?: string;
+
+  /**
+   * Is error
+   */
+  isError?: boolean;
+
+  /**
+   * Error
+   */
+  error?: string;
 };
 
 /**

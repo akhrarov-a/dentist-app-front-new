@@ -1,8 +1,6 @@
 /**
  * <App /> props
  */
-const useAppProps = () => {
-  return {};
-};
+const useAppProps = () => ({});
 
 export { useAppProps };

@@ -9,7 +9,17 @@ import styles from './input.scss';
  */
 const Input = hoc(
   useInputProps,
-  ({ className, label, focused, hasValue, _onBlur, _onFocus, ...props }) => (
+  ({
+    className,
+    label,
+    isError,
+    error,
+    focused,
+    hasValue,
+    _onBlur,
+    _onFocus,
+    ...props
+  }) => (
     <div className={styles.container}>
       <label
         className={classNames(styles.label, {
@@ -20,11 +30,20 @@ const Input = hoc(
         {label}
       </label>
       <input
-        className={classNames(styles.input, className)}
+        className={classNames(styles.input, className, {
+          [styles.inputError]: isError || !!error,
+          [styles.inputHasErrorMessage]: !!error
+        })}
         onFocus={_onFocus}
         onBlur={_onBlur}
         {...props}
       />
+      {!!error && (
+        <div className={styles.error}>
+          <div className={styles.errorSign}>!</div>
+          <p className={styles.errorText}>{error}</p>
+        </div>
+      )}
     </div>
   )
 );
