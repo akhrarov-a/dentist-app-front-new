@@ -17,6 +17,8 @@ const Input = hoc(
     error,
     focused,
     hasValue,
+    onBlur,
+    onFocus,
     _onBlur,
     _onFocus,
     ...props
@@ -37,6 +39,7 @@ const Input = hoc(
       </label>
       <input
         className={classNames(styles.input, className, {
+          [styles.inputHasValue]: hasValue,
           [styles.inputError]: isError || !!error
         })}
         onFocus={_onFocus}

@@ -21,13 +21,14 @@
   transition: $transition;
   background: $white;
 
+  &-focused {
+    color: $primary-dark;
+  }
+
   &-focused,
   &-has-value {
     top: -0.5rem;
     font-size: 0.9rem;
-  }
-
-  &-focused {
     color: $primary-dark;
   }
 
@@ -46,6 +47,10 @@
   border: 1px solid $grey;
   border-radius: $border-radius;
   transition: border $transition;
+
+  &-has-value {
+    border: 1px solid $primary-dark;
+  }
 
   &-error {
     border: 2px solid $red;

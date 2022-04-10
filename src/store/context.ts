@@ -2,6 +2,7 @@ import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 import { History } from 'history';
 import { Store } from 'redux';
 import { AuthService } from '@api';
+import { logOut } from '@auth/store';
 
 /**
  * Get context
@@ -45,7 +46,7 @@ const getContext = (history: History, store: Store) => {
 
         switch (true) {
           case enabled && error.response.status == 401: {
-            // TODO: Dispatch logout action: store.dispatch(logout())
+            store.dispatch(logOut());
 
             break;
           }
