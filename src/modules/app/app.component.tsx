@@ -7,6 +7,8 @@ import { useAppProps } from './app.props';
  * Lazy imports
  */
 const Auth = register('auth', () => import('@auth'));
+const Dashboard = register('dashboard', () => import('@dashboard'));
+const Patients = register('patients', () => import('@patients'));
 
 /**
  * <App />
@@ -15,7 +17,8 @@ const App = hoc(useAppProps, ({ authorized }) => (
   <React.Suspense fallback={<div>Loading...</div>}>
     {authorized ? (
       <Switch>
-        <Route path='/dashboard' render={() => <h1>Dashboard</h1>} />
+        <Route path='/dashboard' component={Dashboard} />
+        <Route path='/patients' component={Patients} />
         <Redirect to='/dashboard' />
       </Switch>
     ) : (

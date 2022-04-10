@@ -29,7 +29,11 @@
       "@app": ["./src/modules/app/index"],
       "@app/*": ["./src/modules/app/*"],
       "@auth": ["./src/modules/auth/index"],
-      "@auth/*": ["./src/modules/auth/*"]
+      "@auth/*": ["./src/modules/auth/*"],
+      "@dashboard": ["./src/modules/dashboard/index"],
+      "@dashboard/*": ["./src/modules/dashboard/*"],
+      "@patients": ["./src/modules/patients/index"],
+      "@patients/*": ["./src/modules/patients/*"]
     }
   },
   "include": ["./src/**/*", "./typings/**/*"],

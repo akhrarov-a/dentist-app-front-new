@@ -46,6 +46,7 @@ class AuthSaga {
   @Saga(logOut)
   public *logOut() {
     yield call(deleteCookie, 'idToken');
+    sessionStorage.removeItem('authorized');
   }
 }
 

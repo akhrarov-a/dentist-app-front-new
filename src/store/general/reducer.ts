@@ -9,10 +9,14 @@ import { getUser, startUp } from './actions';
 const generalReducer = reducer(new GeneralState())
   .on([startUp.success, logIn.success], state => {
     state.authorized = true;
+
+    sessionStorage.setItem('authorized', 'true');
   })
   .on([logIn.fail, logOut], state => {
     state.authorized = false;
     state.user = null;
+
+    sessionStorage.removeItem('authorized');
   })
   .on(getUser.success, (state, payload) => {
     state.user = payload;
