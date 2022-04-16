@@ -3,13 +3,12 @@
 .container {
   @include flex(center, center);
 
-  position: fixed;
-  top: 20px;
-  right: 20px;
+  position: relative;
   width: 160px;
   height: 40px;
   padding: 8px 15px;
-  border: 1px solid $grey;
+  background: $white;
+  //border: 1px solid $grey;
   border-radius: $border-radius;
 
   &-open {
@@ -50,7 +49,8 @@
   top: calc(100% + 1px);
   left: -1px;
   width: calc(100% + 2px);
-  border: 1px solid $grey;
+  background: $white;
+  //border: 1px solid $grey;
   border-bottom-left-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
 }
@@ -81,11 +81,11 @@
   }
 
   &-selected {
-    background: $grey;
+    //background: $grey;
   }
 
   &:hover {
-    background: $primary-light;
+    //background: $primary-light;
     color: $white;
   }
 }

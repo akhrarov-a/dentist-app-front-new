@@ -7,7 +7,8 @@ class GeneralState {
   /**
    * Authorized
    */
-  authorized: boolean = !!sessionStorage.getItem('authorized') ?? false;
+  // authorized: boolean = !!sessionStorage.getItem('authorized') ?? false;
+  public authorized = false;
 
   /**
    * User

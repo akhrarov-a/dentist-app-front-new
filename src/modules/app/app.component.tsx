@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { hoc, LanguageDropdown, register } from '@core';
+import { hoc, register } from '@core';
+import { Layout } from './components';
 import { useAppProps } from './app.props';
 
 /**
@@ -15,13 +16,14 @@ const Patients = register('patients', () => import('@patients'));
  */
 const App = hoc(useAppProps, ({ authorized }) => (
   <React.Suspense fallback={<div>Loading...</div>}>
-    <LanguageDropdown />
     {authorized ? (
-      <Switch>
-        <Route path='/dashboard' component={Dashboard} />
-        <Route path='/patients' component={Patients} />
-        <Redirect to='/dashboard' />
-      </Switch>
+      <Layout>
+        <Switch>
+          <Route path='/dashboard' component={Dashboard} />
+          <Route path='/patients' component={Patients} />
+          <Redirect to='/dashboard' />
+        </Switch>
+      </Layout>
     ) : (
       <Switch>
         <Route path='/auth' component={Auth} />

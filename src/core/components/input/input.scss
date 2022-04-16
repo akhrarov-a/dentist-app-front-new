@@ -17,19 +17,19 @@
   left: 10px;
   padding: 0 4px;
   font-size: 1rem;
-  color: $grey;
+  color: $french-grey;
   transition: $transition;
-  background: $white;
+  background: $ceramic-white;
 
   &-focused {
-    color: $primary-dark;
+    color: $dark-blue;
   }
 
   &-focused,
   &-has-value {
     top: -0.5rem;
     font-size: 0.9rem;
-    color: $primary-dark;
+    color: $dark-blue;
   }
 
   &-error {
@@ -44,12 +44,13 @@
   padding: 0 10px;
   font-size: 1rem;
   font-weight: 400;
-  border: 1px solid $grey;
+  background: $ceramic-white;
+  border: 1px solid $french-grey;
   border-radius: $border-radius;
   transition: border $transition;
 
   &-has-value {
-    border: 1px solid $primary-dark;
+    border: 1px solid $dark-blue;
   }
 
   &-error {
@@ -57,7 +58,7 @@
   }
 
   &:focus {
-    border: 2px solid $primary-dark;
+    border: 2px solid $dark-blue;
   }
 }
 

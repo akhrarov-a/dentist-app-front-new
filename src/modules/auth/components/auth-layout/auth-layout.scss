@@ -5,7 +5,7 @@
 
   width: 100vw;
   height: 100vh;
-  background: $secondary;
+  //background: $secondary;
 }
 
 .content {
@@ -13,7 +13,7 @@
   padding: 3rem;
   border-radius: $border-radius;
   background: $white;
-  box-shadow: 0 5px 25px 4px darken($secondary, 5%);
+  //box-shadow: 0 5px 25px 4px darken($secondary, 5%);
 }
 
 .header {
@@ -30,6 +30,6 @@
   p {
     font-size: 2rem;
     font-weight: 300;
-    color: $primary;
+    //color: $primary;
   }
 }

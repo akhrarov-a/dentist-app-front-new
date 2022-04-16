@@ -1,0 +1,11 @@
+@import 'core.scss';
+
+.container {
+  @include flex(flex-start, center);
+
+  height: 40px;
+
+  h3 {
+    margin: 0;
+  }
+}
