@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { hoc, register } from '@core';
+import { hoc, LanguageDropdown, register } from '@core';
 import { useAppProps } from './app.props';
 
 /**
@@ -15,6 +15,7 @@ const Patients = register('patients', () => import('@patients'));
  */
 const App = hoc(useAppProps, ({ authorized }) => (
   <React.Suspense fallback={<div>Loading...</div>}>
+    <LanguageDropdown />
     {authorized ? (
       <Switch>
         <Route path='/dashboard' component={Dashboard} />
