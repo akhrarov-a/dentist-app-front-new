@@ -14,6 +14,9 @@ const HeaderTitle = () => {
       <Route path='/dashboard'>
         <h3 className={styles.title}>{t('dashboard.title')}</h3>
       </Route>
+      <Route path='/patients'>
+        <h3 className={styles.title}>{t('patients.title')}</h3>
+      </Route>
     </Fragment>
   );
 };

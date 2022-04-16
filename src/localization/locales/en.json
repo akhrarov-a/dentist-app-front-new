@@ -15,5 +15,9 @@
   },
   "dashboard": {
     "title": "Dashboard"
+  },
+  "patients": {
+    "title": "Patients",
+    "add": "Add patient"
   }
 }

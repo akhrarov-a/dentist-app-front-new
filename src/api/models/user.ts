@@ -17,6 +17,11 @@ type User = {
   id: number;
 
   /**
+   * Avatar
+   */
+  avatar: string;
+
+  /**
    * Username
    */
   username: string;
