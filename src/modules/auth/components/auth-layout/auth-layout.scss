@@ -5,7 +5,14 @@
 
   width: 100vw;
   height: 100vh;
-  //background: $secondary;
+  background: $gradient-primary;
+}
+
+.languages {
+  position: fixed;
+  z-index: 12;
+  top: 20px;
+  right: 20px;
 }
 
 .content {
@@ -13,7 +20,7 @@
   padding: 3rem;
   border-radius: $border-radius;
   background: $white;
-  //box-shadow: 0 5px 25px 4px darken($secondary, 5%);
+  box-shadow: $box-shadow
 }
 
 .header {
@@ -30,6 +37,6 @@
   p {
     font-size: 2rem;
     font-weight: 300;
-    //color: $primary;
+    color: $light-blue;
   }
 }

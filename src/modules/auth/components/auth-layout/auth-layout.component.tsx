@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { LanguageDropdown } from '@core';
 import styles from './auth-layout.scss';
 
 /**
@@ -6,6 +7,9 @@ import styles from './auth-layout.scss';
  */
 const AuthLayout: FC = ({ children }) => (
   <div className={styles.container}>
+    <div className={styles.languages}>
+      <LanguageDropdown />
+    </div>
     <div className={styles.content}>
       <div className={styles.header}>
         <img src={require('img/logo.svg')} alt='Logo' />

@@ -8,7 +8,7 @@
   height: 40px;
   padding: 8px 15px;
   background: $white;
-  //border: 1px solid $grey;
+  border: 1px solid $dark-blue;
   border-radius: $border-radius;
 
   &-open {
@@ -50,7 +50,7 @@
   left: -1px;
   width: calc(100% + 2px);
   background: $white;
-  //border: 1px solid $grey;
+  border: 1px solid $dark-blue;
   border-bottom-left-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
 }
@@ -81,11 +81,12 @@
   }
 
   &-selected {
-    //background: $grey;
+    background: $light-blue;
+    color: $white;
   }
 
   &:hover {
-    //background: $primary-light;
+    background: $light-blue;
     color: $white;
   }
 }
