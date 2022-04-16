@@ -16,7 +16,7 @@
   z-index: 13;
   width: fit-content;
   height: 100vh;
-  //background: $secondary-light;
+  background: $milk-white;
   transform: translateX(-100%);
   transition: 0.3s ease-in;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .05);
@@ -38,7 +38,7 @@
   width: 100vw;
   height: 80px;
   padding: 20px;
-  //background: $secondary;
+  background: $milk-white;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .05);
 
   &-content {
