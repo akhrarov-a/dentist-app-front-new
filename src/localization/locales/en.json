@@ -12,5 +12,8 @@
       "invalidCredentials": "Invalid credentials",
       "submit": "Sign in"
     }
+  },
+  "dashboard": {
+    "title": "Dashboard Page"
   }
 }

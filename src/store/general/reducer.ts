@@ -1,7 +1,7 @@
 import { reducer } from 'redux-chill';
 import { logIn, logOut } from '@auth/store';
 import { GeneralState } from './state';
-import { getUser, startUp } from './actions';
+import { getUser, setLanguage, startUp } from './actions';
 
 /**
  * General reducer
@@ -20,6 +20,9 @@ const generalReducer = reducer(new GeneralState())
   })
   .on(getUser.success, (state, payload) => {
     state.user = payload;
+  })
+  .on(setLanguage, (state, payload) => {
+    state.language = payload;
   });
 
 export { generalReducer };

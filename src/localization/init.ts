@@ -14,9 +14,6 @@ const init = async () => {
       },
       ru: {
         common: require('./locales/ru.json')
-      },
-      uz: {
-        common: require('./locales/uz.json')
       }
     },
     defaultNS: 'common',

@@ -1,4 +1,4 @@
-import { User } from '@api';
+import { Languages, User } from '@api';
 
 /**
  * General state
@@ -13,6 +13,11 @@ class GeneralState {
    * User
    */
   public user: User | null = null;
+
+  /**
+   * Language
+   */
+  public language: Languages = Languages.EN;
 }
 
 export { GeneralState };

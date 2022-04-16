@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, useState } from 'react';
+import { InputHTMLAttributes, useRef, useState } from 'react';
 
 /**
  * <Input /> props type
@@ -24,6 +24,8 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
  * <Input /> props
  */
 const useInputProps = ({ value, onFocus, onBlur }: InputProps) => {
+  const inputRef = useRef<HTMLInputElement>();
+
   const [focused, setFocused] = useState(false);
 
   const hasValue = !!value;
@@ -40,11 +42,17 @@ const useInputProps = ({ value, onFocus, onBlur }: InputProps) => {
     onBlur?.(event);
   };
 
+  const onLabelClick = () => {
+    inputRef.current.focus();
+  };
+
   return {
+    inputRef,
     focused,
     hasValue,
     _onFocus,
-    _onBlur
+    _onBlur,
+    onLabelClick
   };
 };
 

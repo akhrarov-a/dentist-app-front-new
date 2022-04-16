@@ -17,10 +17,12 @@ const Input = hoc(
     error,
     focused,
     hasValue,
+    inputRef,
     onBlur,
     onFocus,
     _onBlur,
     _onFocus,
+    onLabelClick,
     ...props
   }) => (
     <div
@@ -34,10 +36,12 @@ const Input = hoc(
           [styles.labelHasValue]: hasValue,
           [styles.labelError]: (isError || !!error) && !focused
         })}
+        onClick={onLabelClick}
       >
         {label}
       </label>
       <input
+        ref={inputRef}
         className={classNames(styles.input, className, {
           [styles.inputHasValue]: hasValue,
           [styles.inputError]: isError || !!error

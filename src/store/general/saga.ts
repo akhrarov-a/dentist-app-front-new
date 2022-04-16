@@ -2,8 +2,9 @@ import { call, put } from 'redux-saga/effects';
 import { Payload, Saga } from 'redux-chill';
 import { StoreContext } from '@store';
 import { getCookie } from '@core';
+import i18n from 'i18next';
 import { logOut } from '@auth/store';
-import { getUser, startUp } from './actions';
+import { getUser, setLanguage, startUp } from './actions';
 
 /**
  * General saga
@@ -41,6 +42,18 @@ class GeneralSaga {
       console.log(err.message);
     } finally {
       yield put(getUser.finish());
+    }
+  }
+
+  /**
+   * Set language
+   */
+  @Saga(setLanguage)
+  public *setLanguage(language: Payload<typeof getUser>) {
+    try {
+      yield i18n.changeLanguage(language);
+    } catch (err) {
+      console.log(err.message);
     }
   }
 }

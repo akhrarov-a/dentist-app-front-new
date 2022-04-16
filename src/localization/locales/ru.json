@@ -1,2 +1,19 @@
 {
+  "auth": {
+    "form": {
+      "username": {
+        "label": "Логин",
+        "requiredText": "Логин обязательно"
+      },
+      "password": {
+        "label": "Пароль",
+        "requiredText": "Пароль обязательно"
+      },
+      "invalidCredentials": "Неправильный логин или",
+      "submit": "Войти"
+    }
+  },
+  "dashboard": {
+    "title": "Посадочная страница"
+  }
 }

@@ -1,5 +1,5 @@
 import { make } from 'redux-chill';
-import { User } from '@api';
+import { Languages, User } from '@api';
 
 /**
  * Start up
@@ -15,4 +15,11 @@ const getUser = make('[general] get user')
   .stage('success', (payload: User) => payload)
   .stage('finish');
 
-export { startUp, getUser };
+/**
+ * Set language
+ */
+const setLanguage = make('[general] set language').stage(
+  (language: Languages) => language
+);
+
+export { startUp, getUser, setLanguage };
