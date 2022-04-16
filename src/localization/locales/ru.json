@@ -11,7 +11,8 @@
       },
       "invalidCredentials": "Неправильный логин или",
       "submit": "Войти"
-    }
+    },
+    "logout": "Выйти"
   },
   "dashboard": {
     "title": "Главная"

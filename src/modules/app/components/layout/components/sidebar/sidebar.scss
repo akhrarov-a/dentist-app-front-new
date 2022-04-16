@@ -1,4 +1,70 @@
 @import 'core.scss';
 
 .container {
+  @include flex($justify: space-between, $direction: column);
+
+  height: 100vh;
+}
+
+.header {
+  @include flex(space-between, center);
+
+  padding: 1.2rem 0 0 1.2rem;
+  margin-bottom: 3rem;
+
+  img {
+    width: 4rem;
+  }
+}
+
+.footer {
+  width: 100%;
+  border-top: 1px solid $french-grey;
+
+  div {
+    cursor: pointer;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.close-icon {
+  @include size(2rem);
+
+  cursor: pointer;
+  margin-right: 1rem;
+  color: $dark-blue;
+}
+
+.link {
+  @include flex($align: center);
+
+  gap: 15px;
+  width: 16rem;
+  margin: 0.1rem 0;
+  padding: 0.8rem 3rem 0.8rem 1.2rem;
+  color: $dark-blue;
+  transition: $transition;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  &-active {
+    div {
+      color: $white;
+      background: $light-blue;
+    }
+  }
+
+  svg {
+    @include size(1.2rem);
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  &:hover {
+    color: $white;
+    background: $light-blue;
+  }
 }

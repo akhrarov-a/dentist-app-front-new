@@ -11,7 +11,8 @@
       },
       "invalidCredentials": "Invalid credentials",
       "submit": "Sign in"
-    }
+    },
+    "logout": "Log out"
   },
   "dashboard": {
     "title": "Dashboard"

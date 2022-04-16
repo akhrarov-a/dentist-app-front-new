@@ -9,8 +9,16 @@ import styles from './language-dropdown.scss';
  */
 const LanguageDropdown = hoc(
   useLanguageDropdownProps,
-  ({ showOptions, language, languages, toggleShowOptions, onOptionClick }) => (
+  ({
+    divRef,
+    showOptions,
+    language,
+    languages,
+    toggleShowOptions,
+    onOptionClick
+  }) => (
     <div
+      ref={divRef}
       className={classNames(styles.container, {
         [styles.containerOpen]: showOptions
       })}

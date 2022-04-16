@@ -18,7 +18,10 @@ const Layout = hoc(
           [styles.sidebarOpen]: isSidebarOpen
         })}
       >
-        <Sidebar />
+        <Sidebar
+          isSidebarOpen={isSidebarOpen}
+          toggleIsSidebarOpen={toggleIsSidebarOpen}
+        />
       </div>
       <div className={styles.header}>
         <FiMenu className={styles.menuIcon} onClick={toggleIsSidebarOpen} />
